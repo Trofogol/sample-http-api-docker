@@ -1,0 +1,3 @@
+[submodule "sample-http-api"]
+	path = sample-http-api
+	url = https://github.com/Trofogol/sample-http-api.git
