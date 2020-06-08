@@ -1,0 +1,7 @@
+# everything that contains "git" in any subdirectory
+*/*git*
+# debian package files
+*/debian
+# python setup file
+*/setup.py
+*/Jenkinsfile
