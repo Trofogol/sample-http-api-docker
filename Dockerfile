@@ -26,3 +26,6 @@ EXPOSE 9090
 
 # set entrypoint to start uwsgi
 ENTRYPOINT [ "uwsgi", "--emperor", "uwsgi.ini" ]
+
+HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=2 \
+            CMD curl -f 127.0.0.1:9090 || exit 1
