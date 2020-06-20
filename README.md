@@ -38,8 +38,7 @@ to not make mistakes):
         $ docker run -d --name api --publish 8080:9090 sample-api:0.1
 
 > `--publish` flag tells Docker to map container's port 9090 to host's port 8080
-(you'll have to connect to localhost port 8080 to connect to container's port 
-9090)
+(you'll have to connect to localhost port 8080 to connect to container's port 9090)
 
 > `--name` flag sets custom name for container. You can use custom name, 
 original image name or long unreadable id of container to specify it to any 
