@@ -20,11 +20,11 @@ interacts with it)
 
         $ git clone --recurse-submodules <this repo link>
 
-- Edit config.yml file from sample-http-api submodule. Set up correct address 
-and of mysql database node. Also, set up correct password and username to get 
+- Edit `config.yml` file from `sample-http-api` submodule. Set up correct address 
+and port of mysql database node. Also, set up correct password and username to get 
 access to it.
 
-- Build Docker image using Dockerfile (you can alter it before build, 
+- Build Docker image using `Dockerfile` (you can alter it before build, 
 refer to [documentation](https://docs.docker.com/engine/reference/builder/) 
 to not make mistakes):
 
@@ -37,14 +37,14 @@ to not make mistakes):
 
         $ docker run -d --name api --publish 8080:9090 sample-api:0.1
 
+> `--publish` flag tells Docker to map container's port 9090 to host's port 8080
+(you'll have to connect to localhost port 8080 to connect to container's port 
+9090)
+
 > `--name` flag sets custom name for container. You can use custom name, 
 original image name or long unreadable id of container to specify it to any 
 further command. `-d` flag instructs container to run in detached (background) 
 mode
-
-> `--publish` flag tells Docker to map container's port 9090 to host's port 8080
-(you'll have to connect to localhost port 8080 to connect to container's port 
-9090)
 
 ## Stopping and starting created container
 
