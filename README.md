@@ -53,15 +53,17 @@ mode
 > When working with Docker Compose, use a directory with docker-compose.yml 
 file as working directory
 
-- start and prepare all swarm nodes, install Docker on them and add every one 
-to swarm
+- start and prepare all swarm nodes: install Docker on them, [enable swarm]
+(https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/) 
+and [add every one to swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/add-nodes/)
 
 - build image using Docker Compose
 
         $ docker-compose build
 
 - [optional] test built image with Docker Compose
-        $ docker-compose up -d
+
+        $ docker-compose up -d                  # launch single test version of image
         $ curl 127.0.0.1:80			# must get main page of API
         $ curl 127.0.0.1:80/mysql/offices/all   # if you get HTTP 500, check MySQL and relative config
         $ docker-compose down --volumes		# remove test service
