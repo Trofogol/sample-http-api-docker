@@ -1,0 +1,25 @@
+---
+version: '3.8'
+
+services: 
+
+  api-http: 
+    image: 172.31.27.153:5000/sample-api  # uncomment for stack deploy
+    build: .
+    ports: 
+      #- 80:9090        # short syntax, looks like it doesn't enable ingress mode (load balancing)
+      - target: 9090
+        published: 80
+        protocol: tcp
+        mode: ingress
+    deploy: 
+      mode: replicated
+      replicas: 2
+      placement: 
+        max_replicas_per_node: 1
+        constraints: 
+        - "node.role!=manager"    # do not deploy on manager
+      update_config: 
+        delay: 5s
+        parallelism: 2
+...
