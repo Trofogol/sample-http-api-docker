@@ -25,18 +25,20 @@ interacts with it)
 and port of mysql database node. Also, set up correct password and username to get 
 access to it.
 
+- [optional] alter `Dockerfile` before build, refer to 
+[documentation](https://docs.docker.com/engine/reference/builder/) 
+to not make mistakes. This file is used every time when image is being built.
+
 ## Single container
 
-- Build Docker image using `Dockerfile` (you can alter it before build, 
-refer to [documentation](https://docs.docker.com/engine/reference/builder/) 
-to not make mistakes):
+- Build Docker image using `Dockerfile`
 
         $ docker build -t sample-api:0.1 .
 
 > `-t` (`--tag`) flag sets tag to created image. You can use it as name of image 
 (instead of long unreadable id). Here tag is `sample-api:0.1`
 
-- Run (create from new image and start) Docker container:
+- Run (create from new image and start) Docker container
 
         $ docker run -d --name api --publish 8080:9090 sample-api:0.1
 
